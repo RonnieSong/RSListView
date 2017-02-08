@@ -57,10 +57,8 @@ export default class RSListView extends Component {
     premptiveLoading: PropTypes.number,
   }
 
-  getDefaultProps() {
-    return {
-      premptiveLoading: 2,
-    };
+  static defaultProps = {
+    premptiveLoading: 2,
   }
 
   componentWillMount() {
@@ -108,7 +106,7 @@ export default class RSListView extends Component {
         continue;
       }
       var sectionID = dataSource.sectionIdentities[sectionIdx];
-      if (this.props.renderSectionHeader) {
+      if (this.props.renderSectionHeader && this.props.renderSectionHeader()) {
         totalIndex++;
       }
       var visibleSection = this._visibleRows[sectionID];
@@ -167,7 +165,7 @@ export default class RSListView extends Component {
   }
 
   onChangeVisibleRows(visibleRows, changedRows) {
-    console.log(changedRows);
+    //
   }
 
   onScroll(event) {

@@ -32,13 +32,13 @@ export default class RSListViewCell extends Component {
     if (visibility == true) {
       this.setState({ visibility: true });
     } else {
-      this.setState({ visibility: false });
+      if (this.viewProperties.width !== 0 && this.viewProperties.height !== 0) {
+        this.setState({ visibility: false });
+      }
     }
   }
 
   render() {
-    if (this.state.visibility === false) {
-    }
     if (this.state.visibility === false) {
       return (
         <View style={{ width: this.viewProperties.width, height: this.viewProperties.height }} />
