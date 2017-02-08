@@ -22,15 +22,15 @@ import RSListView from './RSListView/RSListView';
 ```jsx
 <RSListView ... />
 ```
-
+例如:
 ```jsx
 <RSListView
         initialListSize={10}
-        pageSize={LIST_VIEW_PAGE_SIZE}
+        pageSize={20}
         {...this.props}
         dataSource={this.state.dataSource}
         renderFooter={this.renderFooter}
         onScroll={(e)=>this.onScroll(e)}
-        onContentSizeChange={(w, h)=>this.props.onContentSizeChange(w, h)}
+        onContentSizeChange={(w, h)=>this.onContentSizeChange(w, h)}
       />
 ```
